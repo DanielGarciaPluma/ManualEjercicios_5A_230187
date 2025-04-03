@@ -1,0 +1,11 @@
+@if (isServerRunning) { 
+    @if (isLoggedIn) {
+        <p>Welcome back, Friend!</p>
+    }
+    @else { 
+        <p>You need to Login, Friend!</p>
+    }
+ }
+@else { 
+    <p>Ohh, no! Server is sleeping</p>
+ }

@@ -1,0 +1,39 @@
+<div class="table-container">
+    <div class="search-controls">
+        <input type="text" id="searchInput" placeholder="Buscar..." (input)="filterTable()">
+        <select (change)="onItemsPerPageChange($event)">
+            <option value="10">10 por página</option>
+            <option value="20">20 por página</option>
+            <option value="29">Todos</option>
+        </select>
+    </div>
+
+    <table class="elegant-table" *ngIf="paginatedItems.length > 0">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Fruta Favorita </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of paginatedItems; let i = index">
+                <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.lastname }}</td>
+                <td>{{ item.favoriteFruit }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="no-results" *ngIf="paginatedItems.length === 0">
+        No se encontraron resultados
+    </div>
+
+    <div class="pagination" *ngIf="filteredItems.length > 0">
+        <button [disabled]="currentPage === 1" (click)="changePage(currentPage - 1)">Anterior</button>
+        <span>Página {{ currentPage }} de {{ totalPages }}</span>
+        <button [disabled]="currentPage === totalPages" (click)="changePage(currentPage + 1)">Siguiente</button>
+    </div>
+</div>

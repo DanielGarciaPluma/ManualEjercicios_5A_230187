@@ -1,0 +1,28 @@
+.neon-text {
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+  }
+  
+  /* Animación de borde neón */
+  button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #00FF00, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  button:hover::after {
+    opacity: 1;
+  }
+  
+  /* Efecto de brillo al hover */
+  button:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
+  }
+  .hidden {
+    display: none;
+  }

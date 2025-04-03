@@ -1,0 +1,60 @@
+<nav class="navbar">
+  <!-- Botón del Sidebar -->
+  <button class="sidebar-toggle" (click)="toggleSidebar()">
+      <svg class="menu-icon" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+  </button>
+
+  <!-- Menú de Navegación -->
+  <ul class="nav-menu">
+        <li><a href="#" class="nav-link">Inicio</a></li>
+        <li class="dropdown-container">
+            <a class="nav-link">Tareas</a>
+            <div class="dropdown-menu">
+                <ul>
+                    <li *ngFor="let task of homework">
+                        <a [routerLink]="task.link" class="dropdown-item text-center">
+                            {{ task.name }}
+                        </a>                        
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="#" class="nav-link">Examen</a></li>
+        <li><a href="#" class="nav-link">Acerca de</a></li>
+
+        <!-- Menú Desplegable de Ejercicios -->
+        <li class="dropdown-container">
+            <a href="#" class="nav-link">Ejercicios</a>
+            <div class="dropdown-menu">
+                <ul>
+                    <li *ngFor="let practice of practices">
+                        <a [routerLink]="practice.link" class="dropdown-item text-center">
+                            {{ practice.name }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+  </ul>
+
+  <!-- Menú de Usuario -->
+  <div class="user-menu-container">
+          <span class="user-trigger">
+            <img src="../../../..//public/Imagen de WhatsApp 2024-06-15 a las 16.39.28_5cc61f46.jpg" alt="Usuario" class="user-avatar">
+            Usuario
+        </span>
+      <div class="user-menu">
+          <ul>
+              <li><a href="#" class="dropdown-item text-center">Mis Dashboards</a></li>
+              <li><a href="#" class="dropdown-item text-center">Configuraciones</a></li>
+              <li>
+                  <button type="button" class="dropdown-item w-full" (click)="handleLogout()">
+                      Cerrar Sesión
+                  </button>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>

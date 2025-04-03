@@ -1,0 +1,15 @@
+<app-login *ngIf="!isLoggin" (loginSuccess)="onLoginSuccess()"></app-login>
+
+<div *ngIf="isLoggin">
+  <div class="page-container">
+    <app-navbar (toggleSidebarEvent)="onToggleSidebar($event)" (logoutEvent)="onLogout()"></app-navbar>
+    <div class="content-wrapper">
+      <app-sidebar [class.hidden]="!sidebarVisible"></app-sidebar>
+      <div class="content-area">
+        <app-breadcrumb></app-breadcrumb>
+        <app-page-content></app-page-content>
+        <app-footer></app-footer>
+      </div>
+    </div>
+  </div>
+</div>

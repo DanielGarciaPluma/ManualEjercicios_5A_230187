@@ -1,0 +1,106 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    color: #e2e8f0; /* Texto claro */
+  }
+  
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+ /* Degradado sofisticado */
+  }
+  
+  .page-container app-navbar {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+    background: #fafafa; /* Fondo oscuro secundario */
+    border-bottom: 1px solid #00FF00; /* Borde neón */
+  }
+  
+  .content-wrapper {
+    flex: 1;
+    display: flex;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.95); /* Fondo semitransparente */
+  }
+  
+  .content-wrapper app-sidebar {
+    flex: 0 0 15%;
+    background-color: #1E293B; /* Tonos oscuros */
+    padding: 0;
+    margin: 0;
+    border-right: 1px solid rgba(0, 255, 0, 0.2); /* Borde sutil neón */
+  }
+  
+  .content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background-color: #fcfcfc; /* Coherencia con el tema oscuro */
+  }
+  
+  .content-area app-breadcrumb {
+    padding: 10px;
+    background-color: rgba(0, 255, 0, 0.1); /* Fondo neón translúcido */
+    border-bottom: 1px solid #00FF00; /* Borde neón */
+    margin: 0;
+    color: #00FF00; /* Texto neón */
+  }
+  
+  .content-area app-page-content {
+    flex: 1;
+    padding: 20px;
+    margin: 0;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.1); /* Sombra neón sutil */
+    overflow-y: auto;
+    color: #1E293B; /* Texto claro */
+  }
+  
+  .content-area app-footer {
+    flex: 0 0 auto;
+    padding: 10px;
+    background-color: #1E293B; /* Fondo oscuro */
+    border-top: 1px solid #00FF00; /* Borde superior neón */
+    color: #00FF00; /* Texto neón */
+    text-align: center;
+    margin: 0;
+  }
+  
+  .login-button, .logout-button {
+    padding: 12px 24px;
+    font-size: 18px;
+    color: #0F172A !important; /* Texto oscuro para contraste */
+    background-color: #00FF00; /* Fondo neón */
+    border: 1px solid #00FF00;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3); /* Efecto brillo */
+  }
+  
+  .login-button:hover, .logout-button:hover {
+    background-color: rgba(0, 255, 0, 0.8); /* Neón translúcido */
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Brillos al hover */
+  }
+  
+  /* Efectos adicionales para inputs (opcional) */
+  input, select, textarea {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid #00FF00 !important;
+    color: #00FF00 !important;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus {
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2) !important;
+  }

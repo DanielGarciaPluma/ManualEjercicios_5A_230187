@@ -1,0 +1,46 @@
+<body class="bg-white dark:bg-[#0F172A]">
+    <!-- Contenedor Principal con Animación de Fondo -->
+    <div class="relative z-0">
+        <div class="bg-black before:animate-pulse before:bg-gradient-to-b before:from-gray-900 before:via-[#00FF00] before:to-gray-900 before:absolute before:inset-0 overflow-hidden">
+            
+            <!-- Contenedor del Grid -->
+            <div id="gridContainer" class="relative z-0">
+                <div class="flex flex-wrap gap-0.5 h-screen items-center justify-center bg-gray-900 bg-opacity-50">
+                    <div *ngFor="let item of gridItems" 
+                         class="transition-colors duration-[1.5s] hover:duration-[0s] border-[#00FF00] 
+                                h-[calc(5vw-2px)] w-[calc(5vw-2px)] 
+                                md:h-[calc(4vw-2px)] md:w-[calc(4vw-2px)] 
+                                lg:h-[calc(3vw-4px)] lg:w-[calc(3vw-4px)] 
+                                bg-gray-900 hover:bg-[#00FF00]">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor del Login -->
+        <div class="w-[100vw] h-[100vh] px-3 sm:px-5 flex items-center justify-center fixed top-0 left-0 z-[999]">
+            <div class="w-full sm:w-1/2 lg:w-2/3 px-6 bg-gray-500 bg-opacity-20 bg-clip-padding backdrop-filter backdrop-blur-sm text-white py-4 rounded-lg">
+                <div class="w-full flex justify-center text-[#00FF00] text-xl mb-2 md:mb-5">
+                    Sign In
+                </div>
+                <form (submit)="onLogin(); $event.preventDefault()">
+                    <div class="mb-6">
+                        <label for="email" class="block mb-2 text-xs font-medium text-white">Your email</label>
+                        <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 md:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@neurolink.com" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="password" class="block mb-2 text-xs font-medium text-white">Your password</label>
+                        <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 md:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                    </div>
+                    <div class="flex flex-row justify-between">
+                        <div class="text-white text-sm md:text-md">Forgot Password</div>
+                        <div class="text-[#00FF00] text-sm md:text-md">Signup</div>
+                    </div>
+                    <button class="mt-4 md:mt-10 w-full flex justify-center text-sm md:text-xl bg-[#00FF00] py-2 rounded-md cursor-pointer hover:bg-[#00DD00] transition-colors" type="submit">
+                        Login
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

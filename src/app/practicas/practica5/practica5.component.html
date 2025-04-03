@@ -1,0 +1,6 @@
+@for (os of operatingSystems; track os.id) {
+    {{ os.name }}
+  }
+  @for (user of users; track user.id) {
+    <p>{{ user.name }}</p>
+  }
